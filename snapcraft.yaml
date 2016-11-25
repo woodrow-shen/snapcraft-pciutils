@@ -1,0 +1,20 @@
+name: pciutils
+version: 3.3.1-2
+summary: Linux PCI Utilities
+description: This package contains various utilities for inspecting and setting of
+    devices connected to the PCI bus.
+confinement: strict
+
+apps:
+    lspci:
+        command: usr/bin/lspci
+        plugs: [hardware-observe]
+
+parts:
+    pciutils:
+        plugin: nil 
+        stage-packages:
+            - pciutils 
+        snap:
+            - -usr/share/doc
+            - -usr/share/man
